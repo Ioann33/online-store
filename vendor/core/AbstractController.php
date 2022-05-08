@@ -6,9 +6,9 @@ abstract class AbstractController
 {
     protected $view;
 
-    public function __construct()
+    public function __construct($default)
     {
-        $this -> view = new View();
+        $this->view = new View($default);
     }
 
     abstract function index();
