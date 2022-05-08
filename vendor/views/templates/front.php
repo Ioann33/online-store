@@ -8,7 +8,10 @@
     <title>Document</title>
 </head>
 <body>
-<h1>Hello, I am is Front page</h1>
+
+<main>
+    <?php include_once 'vendor' . DIRECTORY_SEPARATOR . self::VIEW_DIR . DIRECTORY_SEPARATOR .$this->view_template_dir. DIRECTORY_SEPARATOR .$pageTemplate.'.php';?>
+</main>
 
 </body>
 </html>
