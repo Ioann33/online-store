@@ -1,4 +1,4 @@
-<?php include_once '..' .DIRECTORY_SEPARATOR. 'templates'.DIRECTORY_SEPARATOR. 'front.php' ?>
+
 <div class="container">
     <div class="row-cols-lg-3">
         <h2 class="mt-4"> Sing In</h2>
@@ -17,3 +17,4 @@
         </form>
     </div>
 </div>
+
