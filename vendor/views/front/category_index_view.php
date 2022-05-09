@@ -1,1 +1,1 @@
-<?php
+<div style="color: #f0f0f0"><?=$page?></div>
