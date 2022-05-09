@@ -13,7 +13,8 @@ class CategoryController extends AbstractController
 
     public function index()
     {
-        $this ->view->render('category_index_view');
+        $page = $this->categoryModel->showCategories();
+        $this ->view->render('category_index_view', ['page'=>$page]);
     }
 
 }
