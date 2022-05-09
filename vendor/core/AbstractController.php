@@ -2,13 +2,22 @@
 
 namespace core;
 
+use models\categoryModel;
+use models\pageModel;
+
 abstract class AbstractController
 {
     protected $view;
 
-    public function __construct($default)
+    protected $pageModel;
+
+    protected $categoryModel;
+
+    public function __construct($template)
     {
-        $this->view = new View($default);
+        $this->view = new View($template);
+        $this->pageModel = new pageModel();
+        $this->categoryModel = new categoryModel();
     }
 
     abstract function index();
