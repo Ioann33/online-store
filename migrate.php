@@ -26,7 +26,7 @@ $result = $db->query($sql);
 
 echo 'db structure (categories table): ' . ($result ? 'true' : 'false'). '</br>';
 
-$sql = "CREATE TABLE products (id int unsigned auto_increment primary key, name varchar(100), price decimal(5), description text, photo varchar(255), category_id int unsigned, index(name, category_id));";
+$sql = "CREATE TABLE products (id int unsigned auto_increment primary key, name varchar(100), price decimal(5), description text, photo text, category_id int unsigned, index(name, category_id));";
 
 $result = $db->query($sql);
 
