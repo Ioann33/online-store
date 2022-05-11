@@ -3,13 +3,29 @@
 namespace controllers;
 
 use core\View;
+
 class IndexController extends \core\AbstractController
 {
+    public function __construct()
+    {
+        parent::__construct('front');
+    }
 
     public function index()
     {
-        $this ->view->render('front');
+        $page = $this->pageModel->showPage('home');// Home page content
+        $this ->view->render('index_index_view', ['page'=>$page[0]]);
     }
 
+    public function contacts(){
+        //TODO remake model class and connect their
+        $page = $this->pageModel->showPage('contacts');
+        $this ->view->render('index_contacts_view', ['page'=>$page[0]]);
+    }
 
+    public function deliveryPay(){
+        //TODO remake model class and connect their
+        $page = $this->pageModel->showPage('deliveryPay');
+        $this ->view->render('index_deliverypay_view', ['page'=>$page[0]]);
+    }
 }

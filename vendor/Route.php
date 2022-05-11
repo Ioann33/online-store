@@ -8,22 +8,29 @@ class Route
         $uri = $_SERVER['REQUEST_URI'];
         $uriComponents = explode('/', $uri);
         array_shift($uriComponents);
-        if(count($uriComponents)>2){
+        if(count($uriComponents)>3){
             self::notFound();
         }
 
         $controllerName = 'IndexController';
         $action = 'index';
-
-        $controllerClass = '\controllers\\'.$controllerName;
+        if(!empty($uriComponents[0])){
+            $controllerName = mb_strtolower(urldecode($uriComponents[0]));
+        }
+        if(!empty($uriComponents[1])){
+            $action = mb_strtolower(urldecode($uriComponents[1]));
+        }
+        $controllerClass = 'Controllers\\'.mb_ucfirst($controllerName);
         if(!class_exists($controllerClass)){
             self::notFound();
         }
 
         $controller = new $controllerClass();
+
         if(!method_exists($controller, $action)){
             self::notFound();
         }
+
         try{
             $controller->$action();
         }catch (Exception $e){
@@ -39,11 +46,21 @@ class Route
         exit();
     }
 
-    static public function url(string $controller = 'index', string $action = 'index')
+    /**
+     * create url by controller and action
+     * @param string $controller
+     * @param string $action
+     * @return string
+     */
+    static public function url(string $controller = 'IndexController', string $action = 'index',string $id = '')
     {
-        return "/$controller/$action";
+        return "/$controller/$action/$id";
     }
 
+    /**
+     * redirect to url
+     * @param string $url
+     */
     static public function redirect(string $url)
     {
         header("location: $url");
