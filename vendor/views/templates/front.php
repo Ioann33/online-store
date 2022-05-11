@@ -19,7 +19,7 @@
 
                     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                         <div class="navbar-nav">
-                            <a class="nav-link active" style="color: #f0f0f0" aria-current="page" href="#">Categories</a>
+                            <a class="nav-link active" style="color: #f0f0f0" aria-current="page" href="<?=Route::url('CategoryController')?>">Categories</a>
                             <a class="nav-link" style="color: #f0f0f0" href="#">Delivery Pay</a>
                             <a class="nav-link" style="color: #f0f0f0" href="#">About us</a>
                         </div>
