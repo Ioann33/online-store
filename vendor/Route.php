@@ -8,7 +8,7 @@ class Route
         $uri = $_SERVER['REQUEST_URI'];
         $uriComponents = explode('/', $uri);
         array_shift($uriComponents);
-        if(count($uriComponents)>2){
+        if(count($uriComponents)>3){
             self::notFound();
         }
 
@@ -52,9 +52,9 @@ class Route
      * @param string $action
      * @return string
      */
-    static public function url(string $controller = 'IndexController', string $action = 'index')
+    static public function url(string $controller = 'IndexController', string $action = 'index',string $id = '')
     {
-        return "/$controller/$action";
+        return "/$controller/$action/$id";
     }
 
     /**

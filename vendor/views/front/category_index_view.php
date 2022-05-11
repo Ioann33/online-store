@@ -1,34 +1,12 @@
-<link rel="stylesheet" href="../../../css/styles.css">
-<div class="cattop">
-    <div class="d-flex position-relative">
-        <img src="../../../images/test2.jpg" class="flex-shrink-0 me-3" alt="...">
-        <div>
-            <h5 class="mt-0">Custom component with stretched link</h5>
-            <p>This is some placeholder content for the custom component. It is intended to mimic what some real-world content would look like, and we're using it here to give the component a bit of body and size.</p>
-            <a href="#" class="stretched-link">Go somewhere</a>
-        </div>
-        <img src="../../../images/test3.jpg" class="flex-shrink-0 me-3" alt="...">
-        <div>
-            <h5 class="mt-0">Custom component with stretched link</h5>
-            <p>This is some placeholder content for the custom component. It is intended to mimic what some real-world content would look like, and we're using it here to give the component a bit of body and size.</p>
-            <a href="#" class="stretched-link">Go somewhere</a>
-        </div>
-    </div>
-</div>
 
-<div class="catmiddle">
-    <div class="d-flex position-relative">
-        <img src="../../../images/test.jpg" class="flex-shrink-0 me-3" alt="...">
-        <div>
-            <h5 class="mt-0">Custom component with stretched link</h5>
-            <p>This is some placeholder content for the custom component. It is intended to mimic what some real-world content would look like, and we're using it here to give the component a bit of body and size.</p>
-            <a href="#" class="stretched-link">Go somewhere</a>
-        </div>
-        <img src="../../../images/test4.jpg" class="flex-shrink-0 me-3" alt="...">
-        <div>
-            <h5 class="mt-0">Custom component with stretched link</h5>
-            <p>This is some placeholder content for the custom component. It is intended to mimic what some real-world content would look like, and we're using it here to give the component a bit of body and size.</p>
-            <a href="#" class="stretched-link">Go somewhere</a>
-        </div>
+
+<h2>Categories</h2>
+<?php if (!empty($page)):?>
+    <div class="categories" style="color: #f0f0f0; display: flex">
+        <?php foreach ($page  as $value):?>
+            <div class="category" style="width: 200px; height: 200px; border: 1px solid #ffffff; text-align: center;margin: 20px; padding-top: 80px">
+                <a href="<?=Route::url('CategoryController','showAllProducts', $value['id'])?>" style="text-decoration: none"><?= $value['name']?></a>
+            </div>
+        <?php endforeach;?>
     </div>
-</div>
+<?php endif;?>
