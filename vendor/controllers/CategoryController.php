@@ -18,9 +18,7 @@ class CategoryController extends AbstractController
     }
 
     public function showAllProducts(){
-        $uri = $_SERVER['REQUEST_URI'];
-        $uriComponents = explode('/', $uri);
-        array_shift($uriComponents);
+        $uriComponents = \Route::getUri();
         $id = (int) $uriComponents[2];
         $page = $this->categoryModel->showCategory($id);
         $this->view->render('category_show_view', ['page'=>$page]);

@@ -4,10 +4,15 @@
 class Route
 {
 
-    static public function init(){
+    static public function getUri(){
         $uri = $_SERVER['REQUEST_URI'];
         $uriComponents = explode('/', $uri);
         array_shift($uriComponents);
+        return $uriComponents;
+    }
+
+    static public function init(){
+        $uriComponents = self::getUri();
         if(count($uriComponents)>3){
             self::notFound();
         }

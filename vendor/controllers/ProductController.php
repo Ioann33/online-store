@@ -13,9 +13,7 @@ class ProductController extends AbstractController
 
     public function index()
     {
-        $uri = $_SERVER['REQUEST_URI'];
-        $uriComponents = explode('/', $uri);
-        array_shift($uriComponents);
+        $uriComponents = \Route::getUri();
         $id = (int) $uriComponents[2];
         $page = $this->productModel->showProduct($id);
         $this ->view->render('product_show_view', ['page'=>$page]);
