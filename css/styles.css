@@ -13,3 +13,9 @@ h1{
     border: 1px solid #ffffff;
     text-align: center;
 }
+.button{
+    display: flex;
+}
+.button form{
+    margin: 5px;
+}

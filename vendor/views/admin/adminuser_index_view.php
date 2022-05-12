@@ -1,3 +1,10 @@
+<?php if (!empty($message)):?>
+    <div>
+        <ul style="color: #1dff00">
+            <li><?=$message?></li>
+        </ul>
+    </div>
+<?php endif;?>
 <table class="table table" style="color: #f0f0f0">
     <thead>
     <tr>
@@ -16,14 +23,16 @@
                 <td><?=$value['password']?></td>
                 <td>
                 <td>
-                    <form action="" method="post" class="button">
-                        <input type="hidden" name="index" value="<?=$value['id']?>">
-                        <button class="btn btn-danger"><i class="fa fa-trash"></i></button>
-                    </form>
-                    <form action="" method="post" class="button">
-                        <input type="hidden" name="index" value="<?=$value['id']?>">
-                        <button class="btn btn-warning"><i class="fa fa-paste"></i></button>
-                    </form>
+                    <div class="button">
+                        <form action="<?=Route::url('AdminUserController', 'delete')?>" method="post" class="button">
+                            <input type="hidden" name="id" value="<?=$value['id']?>">
+                            <button class="btn btn-danger"><i class="fa fa-trash"></i></button>
+                        </form>
+                        <form action="<?=Route::url('AdminUserController', 'edit')?>" method="post" class="button">
+                            <input type="hidden" name="id" value="<?=$value['id']?>">
+                            <button class="btn btn-warning"> <i class="fa fa-paste"> </i> </button>
+                        </form>
+                    </div>
                 </td>
                 </td>
             </tr>
@@ -31,4 +40,4 @@
     <?php endif;?>
     </tbody>
 </table>
-<a href="/userauth.php?action=create" class="btn btn-success"><i class="fa fa-plus"></i>Create new user</a>
+<a href="<?=Route::url('AdminUserController', 'create')?>" class="btn btn-success"><i class="fa fa-plus"></i>Create new user</a>
