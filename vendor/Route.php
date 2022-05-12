@@ -78,6 +78,12 @@ class Route
         $_SESSION['errors'] = $errors;
     }
 
+    static public function addMessage(string $message)
+    {
+        session_start();
+        $_SESSION['message'] = $message;
+    }
+
     static public function getErrors()
     {
         session_start();
@@ -87,6 +93,17 @@ class Route
             unset($_SESSION['errors']);
         }
         return $errors;
+    }
+
+    static public function getMessage()
+    {
+        session_start();
+        $message = '';
+        if(isset($_SESSION['message'])){
+            $message = $_SESSION['message'];
+            unset($_SESSION['message']);
+        }
+        return $message;
     }
 
 }
