@@ -67,4 +67,21 @@ class Route
         exit();
     }
 
+    static public function addErrors(array $errors)
+    {
+        session_start();
+        $_SESSION['errors'] = $errors;
+    }
+
+    static public function getErrors()
+    {
+        session_start();
+        $errors = [];
+        if(isset($_SESSION['errors'])){
+            $errors = $_SESSION['errors'];
+            unset($_SESSION['errors']);
+        }
+        return $errors;
+    }
+
 }

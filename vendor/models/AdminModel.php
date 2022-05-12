@@ -71,5 +71,21 @@ class AdminModel extends AbstractModel
         return $this->db->query($sql);
     }
 
+    public function getUserByEmail(string $email)
+    {
+        $sql = "SELECT * FROM `users` WHERE email = '{$email}';";
+        $result = $this->db->query($sql);
+        if(!$result){
+            exit($this->db->error);
+        }
+        $temp = $result->fetch_all(MYSQLI_ASSOC);
+        if($temp){
+            return $temp[0];
+        }else{
+            return null;
+        }
+    }
+
+
 
 }
