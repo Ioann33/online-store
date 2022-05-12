@@ -14,7 +14,6 @@ class SinginController extends \core\AbstractController
     public function index()
     {
         $errors = \Route::getErrors();
-        var_dump($errors);
         $this->view->render('singin_show_view', ['errors' => $errors]);
     }
 
