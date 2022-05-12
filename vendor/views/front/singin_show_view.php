@@ -1,6 +1,6 @@
 <?php if (!empty($errors)):?>
     <div>
-        <ul>
+        <ul style="color: #ff0015">
             <?php foreach($errors as $error):?>
                 <li><?= $error?></li>
             <?php endforeach;?>
