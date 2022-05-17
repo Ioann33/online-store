@@ -20,7 +20,7 @@
 
             <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                 <div class="navbar-nav">
-                    <a class="nav-link active" style="color: #f0f0f0" aria-current="page" href="<?=Route::url('CategoryController','index')?>">Categories</a>
+                    <a class="nav-link active" style="color: #f0f0f0" aria-current="page" href="<?=Route::url('AdminCategoryController','index')?>">Categories</a>
                     <a class="nav-link" style="color: #f0f0f0" href="<?=Route::url('IndexController','deliveryPay')?>">Delivery Pay</a>
                     <a class="nav-link" style="color: #f0f0f0" href="<?=Route::url('IndexController','contacts')?>">Contacts</a>
                 </div>
