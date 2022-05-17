@@ -48,11 +48,11 @@ class AdminUserController extends AbstractController
             $result = $this->AdminModel->saveUser($name, $email,$password);
         }
         if ($result){
-            $message = 'User create secsussfuly';
+            $message = 'User create successfully';
             \Route::addMessage($message);
             \Route::redirect(\Route::url('AdminUserController', 'index'));
         }else{
-            $errors[]= 'this email alredy using';
+            $errors[]= 'this email all ready using';
             \Route::addErrors($errors);
             \Route::redirect(\Route::url('AdminUserController', 'create'));
         }
@@ -71,7 +71,7 @@ class AdminUserController extends AbstractController
         $result = $this->AdminModel->updateUser($id, $name, $email, $password);
 
         if ($result){
-            $message = 'user update is secsessfuly';
+            $message = 'user update is successfully';
             \Route::addMessage($message);
             \Route::redirect(\Route::url('AdminUserController', 'index'));
         }else{

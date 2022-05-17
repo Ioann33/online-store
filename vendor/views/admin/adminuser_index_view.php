@@ -52,4 +52,4 @@
     <?php endif;?>
     </tbody>
 </table>
-<a href="<?=Route::url('AdminUserController', 'create')?>" class="btn btn-success"><i class="fa fa-plus"></i>Create new user</a>
+<a href="<?=Route::url('AdminUserController', 'create')?>" class="btn btn-success"><i class="fa fa-plus"></i> Create new user</a>

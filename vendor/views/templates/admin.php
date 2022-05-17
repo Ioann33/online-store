@@ -21,14 +21,16 @@
             <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                 <div class="navbar-nav">
                     <a class="nav-link active" style="color: #f0f0f0" aria-current="page" href="<?=Route::url('AdminCategoryController','index')?>">Categories</a>
-                    <a class="nav-link" style="color: #f0f0f0" href="<?=Route::url('IndexController','deliveryPay')?>">Delivery Pay</a>
+                    <a class="nav-link" style="color: #f0f0f0" href="<?=Route::url('AdminDeliveryPayController','index')?>">Delivery Pay</a>
                     <a class="nav-link" style="color: #f0f0f0" href="<?=Route::url('IndexController','contacts')?>">Contacts</a>
                 </div>
             </div>
 
+            <a class="nav-link" style="color: #f0f0f0" href="<?=Route::url('CategoryController','index')?>"><i class="fa fa-bell" aria-hidden="true"></i></a>
+
             <span class="navbar-text">
-                    <a class="nav-link active" style="color: #f0f0f0"  aria-current="page" href="<?=Route::url()?>">Sing out</a>
-               </span>
+                <a class="nav-link active" style="color: #f0f0f0"  aria-current="page" href="<?=Route::url()?>">Sing out</a>
+            </span>
 
         </div>
     </nav>

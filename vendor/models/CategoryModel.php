@@ -28,7 +28,7 @@ class CategoryModel extends AbstractModel
      * @throws \Exception
      */
     public function showCategory($categoryId){
-        $sql="SELECT * FROM products WHERE category_id = '{$categoryId}';";
+        $sql="SELECT * FROM categories WHERE id = '{$categoryId}';";
         $result = $this->db->query($sql);
         if($this->db->errno !==0){
             throw new \Exception($this->db->errno);

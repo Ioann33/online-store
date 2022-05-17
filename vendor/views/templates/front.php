@@ -25,8 +25,10 @@
                         </div>
                     </div>
 
+               <a class="nav-link" style="color: #f0f0f0" href="<?=Route::url('CategoryController','index')?>"><i class="fa fa-bell" aria-hidden="true"></i></a>
+
                <span class="navbar-text">
-                    <a class="nav-link active" style="color: #f0f0f0"  aria-current="page" href="<?=Route::url('SinginController')?>">Sing In</a>
+                   <a class="nav-link active" style="color: #f0f0f0"  aria-current="page" href="<?=Route::url('SinginController')?>">Sing In</a>
                </span>
 
            </div>

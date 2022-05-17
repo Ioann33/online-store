@@ -31,7 +31,7 @@ class pageModel extends AbstractModel
      * @return bool
      */
     public function updatePage($id,$namePage,$text){
-        $sql="UPDATE pages UpdateSET text ='{$text}' WHERE ID = '{$id}' AND NAME = '{$namePage}';";
+        $sql="UPDATE pages SET text ='{$text}' WHERE ID = '{$id}' AND NAME = '{$namePage}';";
         return $this->db->query($sql);
     }
 
